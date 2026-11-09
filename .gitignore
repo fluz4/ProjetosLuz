@@ -1,0 +1,3 @@
+watch_*/
+__pycache__/
+*.pyc
