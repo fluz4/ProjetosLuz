@@ -65,7 +65,7 @@ def download(url, out):
     except subprocess.CalledProcessError:
         # Legendas às vezes falham (rate limit); tenta só o vídeo.
         log("falha com legendas, tentando apenas o vídeo")
-        run(cmd[:9] + ["--write-info-json", url])
+        run(cmd[:8] + ["--write-info-json", url])
     vids = [p for p in glob.glob(os.path.join(out, "video.*"))
             if p.rsplit(".", 1)[-1] in ("mp4", "mkv", "webm", "mov", "m4a", "mp3")]
     if not vids:
